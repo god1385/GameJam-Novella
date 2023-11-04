@@ -41,10 +41,13 @@ public class ShootingMinigameMainScript : MonoBehaviour
                 newObject.GetComponent<Image>().enabled = false;
 
                 newObject.GetComponent<ShootImage>().UpdateSize();
-                float newImageWidth = newObject.GetComponent<ShootImage>().Width;
-                float newImageHeight = newObject.GetComponent<ShootImage>().Height;
-                float canvasWidth = gameObject.GetComponent<RectTransform>().rect.width;
-                float canvasHeight = gameObject.GetComponent<RectTransform>().rect.height;
+
+                Vector3 localScale = gameObject.GetComponent<RectTransform>().localScale;
+                float newImageWidth = newObject.GetComponent<ShootImage>().Width * localScale.x;
+                float newImageHeight = newObject.GetComponent<ShootImage>().Height * localScale.y;
+                float canvasWidth = gameObject.GetComponent<RectTransform>().rect.width * localScale.x;
+                float canvasHeight = gameObject.GetComponent<RectTransform>().rect.height * localScale.y;
+
                 Vector3[] newImageCorners = {
                     new Vector3(0, 0),
                     new Vector3(0, newImageHeight),
