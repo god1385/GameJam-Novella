@@ -191,6 +191,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &577992104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 681566421777115526, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
+  m_PrefabInstance: {fileID: 4741662541474817749}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &725205021
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +294,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1625509647 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6618063290182915822, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
+  m_PrefabInstance: {fileID: 4741662541474817749}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4741662541474817749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -379,9 +401,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2309731581825255042, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
+      propertyPath: scene
+      value: 
+      objectReference: {fileID: 11400000, guid: 798ddaf3049e0d743ae6c0317fbaa3c2, type: 2}
+    - target: {fileID: 2309731581825255042, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
+      propertyPath: textField
+      value: 
+      objectReference: {fileID: 1625509647}
+    - target: {fileID: 2309731581825255042, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
+      propertyPath: speakerNameTextField
+      value: 
+      objectReference: {fileID: 577992104}
     - target: {fileID: 2573349007326151301, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
       propertyPath: m_Name
       value: MainCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524784810374658606, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 539.7608
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524784810374658606, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 280.68042
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
