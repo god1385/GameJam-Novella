@@ -215,6 +215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingMinigameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5503064034361898665, guid: b1c13ddcbfd85924a9c2e8a01e83bf68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8146116203364693532, guid: b1c13ddcbfd85924a9c2e8a01e83bf68, type: 3}
       propertyPath: numberSpawn
       value: 4
