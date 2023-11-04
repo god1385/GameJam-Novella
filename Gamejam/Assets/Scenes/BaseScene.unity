@@ -395,6 +395,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8146116203364693532, guid: b1c13ddcbfd85924a9c2e8a01e83bf68, type: 3}
+      propertyPath: dropSpeed
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146116203364693532, guid: b1c13ddcbfd85924a9c2e8a01e83bf68, type: 3}
       propertyPath: numberSpawn
       value: 5
       objectReference: {fileID: 0}

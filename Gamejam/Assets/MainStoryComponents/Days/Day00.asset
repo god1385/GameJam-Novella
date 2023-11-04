@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Day00
   m_EditorClassIdentifier: 
   dialogues:
-  - text: Hello there
+  - text: Hello There
     speaker: {fileID: 11400000, guid: 2f39c75f94e423441b58314c5b877061, type: 2}
   - text: Hi bro
     speaker: {fileID: 11400000, guid: b0f105fd6dc3f2d4e9b290420ad02a32, type: 2}
@@ -30,4 +30,5 @@ MonoBehaviour:
   rightOptionScene: {fileID: 11400000, guid: 0e210163fe20b51488d6d42129a72cca, type: 2}
   leftOptionScene: {fileID: 0}
   isChoiceAvailable: 0
-  isLeadingToMiniGame: 1
+  isLeadingToMiniGame: 0
+  isLastDialogue: 0

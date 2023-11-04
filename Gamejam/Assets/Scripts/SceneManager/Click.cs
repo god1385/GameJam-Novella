@@ -1,15 +1,18 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Click : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI speakerNameTextField;
+    [SerializeField] private Image speakerImage;
     [SerializeField] private TextMeshProUGUI textField;
     [SerializeField] private Animator backgroundAnimator;
     [SerializeField] private Animator textAnimator;
     [SerializeField] private Animator buttonAnimation;
     [SerializeField] private Animator miniGameButtonAnimation;
+    [SerializeField] private Animator speakerImageAnimator;
     [SerializeField] private Canvas miniGameCanvas;
     [SerializeField] private float offset;
     private bool _isPlaying;
@@ -20,9 +23,8 @@ public class Click : MonoBehaviour
 
     private void Start()
     {
-        _isPlaying = false;
-        _isCompleted = false;
-        dialogueIndex = 0;
+        ResetValues();
+        speakerImageAnimator.SetTrigger("Show");
     }
     private void Update()
     {
@@ -45,6 +47,17 @@ public class Click : MonoBehaviour
         }
     }
 
+    private void CheckTheSecondSpeakerSprite()
+    {
+        for (int i = 0; i < currentScene.dialogues.Count; i++)
+        {
+            if (!currentScene.dialogues[i].speaker.mainCharacter)
+            {
+                speakerImage.sprite = currentScene.dialogues[i].speaker.speakerSprite;
+                break;
+            }
+        }
+    }
     public void TriggerMiniGame()
     {
         StartCoroutine(SwitchToMiniGame(currentScene.nextScene));
@@ -82,26 +95,34 @@ public class Click : MonoBehaviour
         currentScene = scene;
         HideBottomText();
         textAnimator.SetTrigger("Hide");
+        speakerImageAnimator.SetTrigger("Hide");
         yield return new WaitForSeconds(1f);
         backgroundAnimator.SetTrigger("ChangeScene");
         yield return new WaitForSeconds(1f);
         textAnimator.SetTrigger("Show");
+        speakerImageAnimator.SetTrigger("Show");
         yield return new WaitForSeconds(1f);
-        _isPlaying = false;
-        _isCompleted = false;
-        dialogueIndex = 0;
+        ResetValues();
+
     }
     private IEnumerator SwitchToMiniGame(SceneSetUp scene)
     {
         currentScene = scene;
         HideBottomText();
         textAnimator.SetTrigger("Hide");
+        speakerImageAnimator.SetTrigger("Hide");
         miniGameButtonAnimation.SetTrigger("Hide");
         yield return new WaitForSeconds(3f);
+        ResetValues();
+        miniGameCanvas.gameObject.SetActive(true);
+        gameObject.SetActive(false);
+    }
+
+    private void ResetValues()
+    {
         _isPlaying = false;
         _isCompleted = false;
         dialogueIndex = 0;
-        miniGameCanvas.gameObject.SetActive(true);
-        gameObject.SetActive(false);
+        CheckTheSecondSpeakerSprite();
     }
 }
