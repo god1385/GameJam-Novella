@@ -219,6 +219,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6173856166565985883, guid: b1c13ddcbfd85924a9c2e8a01e83bf68, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8146116203364693532, guid: b1c13ddcbfd85924a9c2e8a01e83bf68, type: 3}
       propertyPath: numberSpawn
       value: 4
@@ -234,8 +238,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5503064034361898665, guid: b1c13ddcbfd85924a9c2e8a01e83bf68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 123668406}
   m_SourcePrefab: {fileID: 100100000, guid: b1c13ddcbfd85924a9c2e8a01e83bf68, type: 3}
+--- !u!1 &123668405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5503064034361898665, guid: b1c13ddcbfd85924a9c2e8a01e83bf68, type: 3}
+  m_PrefabInstance: {fileID: 123668404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &123668406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123668405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77d31e68f3f8ea4486ebd512e174704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 0}
+  countScoreTabl: 0
 --- !u!1 &1277707487
 GameObject:
   m_ObjectHideFlags: 0
