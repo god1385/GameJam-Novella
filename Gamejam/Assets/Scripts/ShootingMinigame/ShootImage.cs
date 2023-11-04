@@ -1,8 +1,10 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ShootImage : MonoBehaviour
+public class ShootImage : MonoBehaviour, IPointerClickHandler
 {
+    [SerializeField] private bool isBad;
     private ScriptScore score;
     private float _width;
     private float _height;
@@ -17,11 +19,20 @@ public class ShootImage : MonoBehaviour
         _height = rt.rect.height;
     }
 
-    public void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
         gameObject.transform.parent.GetComponent<ShootingMinigameMainScript>().ClearImage(gameObject);
         Destroy(gameObject);
-        score.AddScore();
+
+        if ((isBad && eventData.button == PointerEventData.InputButton.Left) ||
+            (!isBad && eventData.button == PointerEventData.InputButton.Right))
+        {
+            score.AddScore();
+        }
+        else
+        {
+            score.DecreaseScore();
+        }
     }
     private void Start()
     {
