@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Day00
   m_EditorClassIdentifier: 
   dialogues:
-  - text: 
+  - text: Hello there
     speaker: {fileID: 11400000, guid: 2f39c75f94e423441b58314c5b877061, type: 2}
-  - text: 
+  - text: Hi bro
     speaker: {fileID: 11400000, guid: b0f105fd6dc3f2d4e9b290420ad02a32, type: 2}
   backgroundImage: {fileID: 21300000, guid: 14c2d51a1897ece44a4866c4783228e3, type: 3}
   nextScene: {fileID: 0}
