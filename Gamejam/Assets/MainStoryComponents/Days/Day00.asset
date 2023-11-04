@@ -17,5 +17,17 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 2f39c75f94e423441b58314c5b877061, type: 2}
   - text: Hi bro
     speaker: {fileID: 11400000, guid: b0f105fd6dc3f2d4e9b290420ad02a32, type: 2}
+  - text: Its your Code?
+    speaker: {fileID: 11400000, guid: 2f39c75f94e423441b58314c5b877061, type: 2}
+  - text: Yeap
+    speaker: {fileID: 11400000, guid: b0f105fd6dc3f2d4e9b290420ad02a32, type: 2}
+  - text: Can i check it out?
+    speaker: {fileID: 11400000, guid: 2f39c75f94e423441b58314c5b877061, type: 2}
+  - text: Yeah sure
+    speaker: {fileID: 11400000, guid: b0f105fd6dc3f2d4e9b290420ad02a32, type: 2}
   backgroundImage: {fileID: 21300000, guid: 14c2d51a1897ece44a4866c4783228e3, type: 3}
-  nextScene: {fileID: 0}
+  nextScene: {fileID: 11400000, guid: 0e210163fe20b51488d6d42129a72cca, type: 2}
+  rightOptionScene: {fileID: 11400000, guid: 0e210163fe20b51488d6d42129a72cca, type: 2}
+  leftOptionScene: {fileID: 0}
+  isChoiceAvailable: 0
+  isLeadingToMiniGame: 1
