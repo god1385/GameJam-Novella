@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,6 +14,12 @@ public class ScriptScore : MonoBehaviour
     public void AddScore()
     {
         countScoreTabl++;
-        score.text = "���� " + Convert.ToString(countScoreTabl);
+        score.text = "Счёт: " + Convert.ToString(countScoreTabl);
+    }
+
+    public void DecreaseScore()
+    {
+        countScoreTabl--;
+        score.text = "Счёт: " + Convert.ToString(countScoreTabl);
     }
 }

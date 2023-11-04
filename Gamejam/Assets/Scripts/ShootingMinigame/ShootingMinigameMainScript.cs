@@ -7,28 +7,41 @@ public class ShootingMinigameMainScript : MonoBehaviour
 {
     [SerializeField] private GameObject imageGoodPrefab;
     [SerializeField] private GameObject imageBadPrefab;
-    [SerializeField] private Image codeImages;
     [SerializeField] private int numberSpawn;
+    [SerializeField] private int dropSpeed;
 
     private struct SpawnedObject
     {
         public GameObject imageObject;
-        public float[] imageSides;
+        public float imageWidth;
+        public float imageHeight;
     }
 
     private List<SpawnedObject> _spawnedObjects = new List<SpawnedObject>();
 
     private int _numberSpawned = 0;
     private bool _end = false;
-    void Start()
+    private float _spawnY;
+    private float _destroyY;
+    private float _standartImageHeight = 300;
+    private float _canvasWidth;
+    private float _canvasHeight;
+    private bool _spawnGood;
+    private Vector3 _canvasScale;
+    private List<SpawnedObject> _removeObjects = new List<SpawnedObject>();
+    private GameObject _spawnedObject;
+
+    private void Start()
     {
         Canvas.ForceUpdateCanvases();
+
+        _canvasScale = gameObject.GetComponent<RectTransform>().localScale;
+        _canvasWidth = gameObject.GetComponent<RectTransform>().rect.width * _canvasScale.x;
+        _canvasHeight = gameObject.GetComponent<RectTransform>().rect.height * _canvasScale.y;
+        _spawnY = _canvasHeight + _standartImageHeight * _canvasScale.y;
+        _destroyY = -_standartImageHeight * _canvasScale.y;
+
         StartCoroutine(DropImage());
-    }
-
-    void Update()
-    {
-
     }
 
     private IEnumerator DropImage()
@@ -37,16 +50,20 @@ public class ShootingMinigameMainScript : MonoBehaviour
         {
             if (_numberSpawned < numberSpawn)
             {
-                GameObject newObject = Instantiate(imageGoodPrefab, new Vector3(-500, -500, 0), new Quaternion(), gameObject.transform);
-                newObject.GetComponent<Image>().enabled = false;
+                _spawnGood = Random.Range(0, 2) == 1;
+                if(_spawnGood)
+                {
+                    _spawnedObject = Instantiate(imageGoodPrefab, new Vector3(0, 0, 0), new Quaternion(), gameObject.transform);
+                }    
+                else
+                {
+                    _spawnedObject = Instantiate(imageBadPrefab, new Vector3(0, 0, 0), new Quaternion(), gameObject.transform);
+                }
 
-                newObject.GetComponent<ShootImage>().UpdateSize();
+                _spawnedObject.GetComponent<ShootImage>().UpdateSize();
 
-                Vector3 localScale = gameObject.GetComponent<RectTransform>().localScale;
-                float newImageWidth = newObject.GetComponent<ShootImage>().Width * localScale.x;
-                float newImageHeight = newObject.GetComponent<ShootImage>().Height * localScale.y;
-                float canvasWidth = gameObject.GetComponent<RectTransform>().rect.width * localScale.x;
-                float canvasHeight = gameObject.GetComponent<RectTransform>().rect.height * localScale.y;
+                float newImageWidth = _spawnedObject.GetComponent<ShootImage>().Width * _canvasScale.x;
+                float newImageHeight = _spawnedObject.GetComponent<ShootImage>().Height * _canvasScale.y;
 
                 Vector3[] newImageCorners = {
                     new Vector3(0, 0),
@@ -61,8 +78,8 @@ public class ShootingMinigameMainScript : MonoBehaviour
 
                 while (foundPosition == false && tryPlace == true)
                 {
-                    newImageRandomX = Random.Range(newImageWidth, canvasWidth - newImageWidth);
-                    newImageRandomY = Random.Range(newImageHeight, canvasHeight - newImageHeight);
+                    newImageRandomX = Random.Range(newImageWidth, _canvasWidth - newImageWidth);
+                    //newImageRandomY = Random.Range(_spawnY, canvasHeight - newImageHeight);
 
                     newImageCorners[0] = new Vector3(newImageRandomX - newImageWidth / 2, newImageRandomY - newImageHeight / 2);
                     newImageCorners[1] = new Vector3(newImageRandomX - newImageWidth / 2, newImageRandomY + newImageHeight / 2);
@@ -74,10 +91,10 @@ public class ShootingMinigameMainScript : MonoBehaviour
                     {
                         foreach (var corner in newImageCorners)
                         {
-                            if (corner.x >= obj.imageSides[0] &&
-                                corner.x <= obj.imageSides[1] &&
-                                corner.y >= obj.imageSides[2] &&
-                                corner.y <= obj.imageSides[3])
+                            if (corner.x >= obj.imageObject.transform.position.x - obj.imageWidth / 2 &&
+                                corner.x <= obj.imageObject.transform.position.x + obj.imageWidth / 2 &&
+                                corner.y >= obj.imageObject.transform.position.y - obj.imageHeight / 2 &&
+                                corner.y <= obj.imageObject.transform.position.y + obj.imageHeight / 2)
                             {
                                 foundPosition = false;
                                 break;
@@ -96,32 +113,59 @@ public class ShootingMinigameMainScript : MonoBehaviour
 
                 if (foundPosition)
                 {
-                    PutImage(newObject, newImageRandomX, newImageRandomY, newImageCorners);
+                    PutImage(_spawnedObject, newImageRandomX, _spawnY, newImageWidth, newImageHeight);
                 }
                 else
                 {
-                    Destroy(gameObject);
+                    Destroy(_spawnedObject);
                 }
 
                 yield return new WaitForSeconds(1);
             }
             else
             {
-                _end = true;
                 yield return new WaitForSeconds(5);
             }
         } while (_end == false);
     }
 
-    private void PutImage(GameObject image, float positionX, float positionY, Vector3[] corners)
+    private void PutImage(GameObject image, float positionX, float positionY, float newImageWidth, float newImageHeight)
     {
         image.transform.position = new Vector3(positionX, positionY);
         image.GetComponent<Image>().enabled = true;
         SpawnedObject newStrucSpawn = new SpawnedObject();
         newStrucSpawn.imageObject = image;
-        newStrucSpawn.imageSides = new float[4] { corners[0].x, corners[2].x, corners[0].y, corners[2].y };
+        newStrucSpawn.imageWidth = newImageWidth;
+        newStrucSpawn.imageHeight = newImageHeight;
         _spawnedObjects.Add(newStrucSpawn);
         _numberSpawned++;
+    }
+
+    private void Update()
+    {
+        MoveImages();
+    }
+
+    private void MoveImages()
+    {
+        foreach (var obj in _spawnedObjects)
+        {
+            Vector2 newPos = obj.imageObject.transform.position;
+            newPos.y -= dropSpeed;
+            obj.imageObject.transform.position = Vector2.Lerp(obj.imageObject.transform.position, newPos, Time.deltaTime);
+            if(obj.imageObject.transform.position.y < _destroyY) 
+            {
+                _removeObjects.Add(obj);
+            }
+        }
+
+        foreach (var removeObj in _removeObjects)
+        {
+            Destroy(removeObj.imageObject);
+            _spawnedObjects.Remove(removeObj);
+            _numberSpawned--;
+        }
+        _removeObjects.Clear();
     }
 
     public void ClearImage(GameObject image)
