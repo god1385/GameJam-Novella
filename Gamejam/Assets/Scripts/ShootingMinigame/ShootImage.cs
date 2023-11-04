@@ -1,7 +1,9 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShootImage : MonoBehaviour
 {
+    private ScriptScore score;
     private float _width;
     private float _height;
 
@@ -19,5 +21,10 @@ public class ShootImage : MonoBehaviour
     {
         gameObject.transform.parent.GetComponent<ShootingMinigameMainScript>().ClearImage(gameObject);
         Destroy(gameObject);
+        score.AddScore();
+    }
+    private void Start()
+    {
+        score = GetComponentInParent<ScriptScore>();
     }
 }
