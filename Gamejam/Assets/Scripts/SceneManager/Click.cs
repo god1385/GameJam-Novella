@@ -162,6 +162,20 @@ public class Click : MonoBehaviour
         AudioManager.instance.PlayMusic("MinigameTheme");
     }
 
+    public void SwitchBackToGame()
+    {
+        StartCoroutine(SwitchFromMiniGame());
+    }
+    public IEnumerator SwitchFromMiniGame()
+    {
+        backgroundAnimator.SetTrigger("ChangeScene");
+        yield return new WaitForSeconds(1f);
+        speakerImageAnimator.SetTrigger("Show");
+        yield return new WaitForSeconds(1f);
+        ResetValues();
+        PrintFirstDialogue();
+    }
+
     private void ResetValues()
     {
         _isPlaying = false;

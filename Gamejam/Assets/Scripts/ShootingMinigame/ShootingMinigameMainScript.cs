@@ -58,10 +58,10 @@ public class ShootingMinigameMainScript : MonoBehaviour
             if (_numberSpawned < numberSpawn)
             {
                 _spawnGood = Random.Range(0, 2) == 1;
-                if(_spawnGood)
+                if (_spawnGood)
                 {
                     _spawnedObject = Instantiate(imageGoodPrefab, new Vector3(0, 0, 0), new Quaternion(), gameObject.transform);
-                }    
+                }
                 else
                 {
                     _spawnedObject = Instantiate(imageBadPrefab, new Vector3(0, 0, 0), new Quaternion(), gameObject.transform);
@@ -164,7 +164,7 @@ public class ShootingMinigameMainScript : MonoBehaviour
             Vector2 newPos = obj.imageObject.transform.position;
             newPos.y -= dropSpeed;
             obj.imageObject.transform.position = Vector2.Lerp(obj.imageObject.transform.position, newPos, Time.deltaTime);
-            if(obj.imageObject.transform.position.y < _destroyY) 
+            if (obj.imageObject.transform.position.y < _destroyY)
             {
                 _removeObjects.Add(obj);
             }
