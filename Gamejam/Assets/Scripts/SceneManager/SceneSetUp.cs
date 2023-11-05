@@ -13,6 +13,8 @@ public class SceneSetUp : ScriptableObject
     public bool isChoiceAvailable;
     public bool isLeadingToMiniGame;
     public bool isLastDialogue;
+    public string rightChoiceText;
+    public string leftChoiceText;
 
     [System.Serializable]
     public struct Dialogue

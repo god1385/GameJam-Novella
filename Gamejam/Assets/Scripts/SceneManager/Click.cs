@@ -8,6 +8,8 @@ public class Click : MonoBehaviour
     [SerializeField] private TextMeshProUGUI speakerNameTextField;
     [SerializeField] private Image speakerImage;
     [SerializeField] private TextMeshProUGUI textField;
+    [SerializeField] private TextMeshProUGUI leftButtontextField;
+    [SerializeField] private TextMeshProUGUI rightButtontextField;
     [SerializeField] private Animator backgroundAnimator;
     [SerializeField] private Animator textAnimator;
     [SerializeField] private Animator buttonAnimation;
@@ -107,6 +109,8 @@ public class Click : MonoBehaviour
 
     private IEnumerator SwitchToButtons()
     {
+        leftButtontextField.text = currentScene.leftChoiceText;
+        rightButtontextField.text = currentScene.leftChoiceText;
         yield return new WaitUntil(() => _isPlaying == false);
         yield return new WaitForSeconds(1f);
         HideBottomText();
