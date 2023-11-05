@@ -41,8 +41,8 @@ public class ShootImage : MonoBehaviour, IPointerDownHandler
     private void Start()
     {
         score = GetComponentInParent<ScriptScore>();
-        if (isBad)
-        {
+        if(imageListPNG != null) 
+        { 
             gameObject.GetComponent<Image>().sprite = imageListPNG[Random.Range(0, imageListPNG.Count)];
         }
     }
