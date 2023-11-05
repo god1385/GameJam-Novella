@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a760702948f1745a2300d175099249, type: 3}
   m_Name: You
   m_EditorClassIdentifier: 
-  speakerName: "\u042F"
+  speakerName: You
   speakerTextColor: {r: 0.0764062, g: 0.5193523, b: 0.9528302, a: 1}
   speakerSprite: {fileID: 0}
   mainCharacter: 1

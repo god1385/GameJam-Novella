@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a760702948f1745a2300d175099249, type: 3}
   m_Name: BestFriend
   m_EditorClassIdentifier: 
-  speakerName: "\u041B\u0443\u0447\u0448\u0438\u0439 \u0414\u0440\u0443\u0433"
+  speakerName: Best Friend
   speakerTextColor: {r: 0.91117615, g: 0.9245283, b: 0.18752226, a: 1}
   speakerSprite: {fileID: 21300000, guid: e7d276f42579fbb439693d2b25987dfe, type: 3}
   mainCharacter: 0

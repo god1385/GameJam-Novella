@@ -25,34 +25,26 @@ public class Click : MonoBehaviour
     {
         ResetValues();
         speakerImageAnimator.SetTrigger("Show");
-        PrintText();
     }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && !_isPlaying && dialogueIndex != currentScene.dialogues.Count)
         {
-            PrintText();
+            speakerNameTextField.text = currentScene.dialogues[dialogueIndex].speaker.speakerName;
+            speakerNameTextField.color = currentScene.dialogues[dialogueIndex].speaker.speakerTextColor;
+            StartCoroutine(TextPrinting(currentScene.dialogues[dialogueIndex++].text));
 
             if (dialogueIndex == currentScene.dialogues.Count && !currentScene.isChoiceAvailable && !currentScene.isLeadingToMiniGame)
                 _isCompleted = true;
             else if (dialogueIndex == currentScene.dialogues.Count && currentScene.isChoiceAvailable && !currentScene.isLastDialogue)
-            {
-                StartCoroutine(HideTextAndSpeaker());
-            }
+                buttonAnimation.SetTrigger("Show");
             else if (dialogueIndex == currentScene.dialogues.Count && currentScene.isLeadingToMiniGame && !currentScene.isLastDialogue)
                 miniGameButtonAnimation.SetTrigger("Show");
         }
         else if (Input.GetMouseButtonDown(0) && _isPlaying == false && _isCompleted && !currentScene.isLastDialogue)
         {
-            StartCoroutine(ChangeScene(currentScene.nextScene));
+            StartCoroutine(ShowText(currentScene.nextScene));
         }
-    }
-
-    private void PrintText()
-    {
-        speakerNameTextField.text = currentScene.dialogues[dialogueIndex].speaker.speakerName;
-        speakerNameTextField.color = currentScene.dialogues[dialogueIndex].speaker.speakerTextColor;
-        StartCoroutine(TextPrinting(currentScene.dialogues[dialogueIndex++].text));
     }
 
     private void CheckTheSecondSpeakerSprite()
@@ -89,18 +81,8 @@ public class Click : MonoBehaviour
 
     public void ChangeToRightVersion()
     {
-        if (currentScene.rightOptionScene != null)
-        {
-            StartCoroutine(ButtonChangeScene(currentScene.rightOptionScene));
-        }
-    }
-
-    public void ChangeToLeftVersion()
-    {
-        if (currentScene.leftOptionScene != null)
-        {
-            StartCoroutine(ButtonChangeScene(currentScene.leftOptionScene));
-        }
+        buttonAnimation.SetTrigger("Hide");
+        StartCoroutine(ShowText(currentScene.rightOptionScene));
     }
 
     private void HideBottomText()
@@ -108,34 +90,7 @@ public class Click : MonoBehaviour
         speakerNameTextField.text = "";
         textField.text = "";
     }
-
-    private IEnumerator HideTextAndSpeaker()
-    {
-        yield return new WaitUntil(() => _isPlaying == false);
-        yield return new WaitForSeconds(1f);
-        HideBottomText();
-        textAnimator.SetTrigger("Hide");
-        yield return new WaitForSeconds(1f);
-        speakerImageAnimator.SetTrigger("Hide");
-        yield return new WaitForSeconds(1f);
-        buttonAnimation.SetTrigger("Show");
-    }
-
-    private IEnumerator ButtonChangeScene(SceneSetUp scene)
-    {
-        currentScene = scene;
-        buttonAnimation.SetTrigger("Hide");
-        backgroundAnimator.SetTrigger("ChangeScene");
-        yield return new WaitForSeconds(1f);
-        textAnimator.SetTrigger("Show");
-        yield return new WaitForSeconds(1f);
-        speakerImageAnimator.SetTrigger("Show");
-        yield return new WaitForSeconds(1f);
-        ResetValues();
-        PrintText();
-    }
-
-    private IEnumerator ChangeScene(SceneSetUp scene)
+    private IEnumerator ShowText(SceneSetUp scene)
     {
         currentScene = scene;
         HideBottomText();
@@ -145,13 +100,11 @@ public class Click : MonoBehaviour
         backgroundAnimator.SetTrigger("ChangeScene");
         yield return new WaitForSeconds(1f);
         textAnimator.SetTrigger("Show");
-        yield return new WaitForSeconds(1f);
         speakerImageAnimator.SetTrigger("Show");
         yield return new WaitForSeconds(1f);
         ResetValues();
-        PrintText();
-    }
 
+    }
     private IEnumerator SwitchToMiniGame(SceneSetUp scene)
     {
         currentScene = scene;

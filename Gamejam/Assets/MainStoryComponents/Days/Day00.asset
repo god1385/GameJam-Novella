@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Day00
   m_EditorClassIdentifier: 
   dialogues:
-  - text: "\u0417\u0434\u0430\u0440\u043E\u0432\u0430 \u0431\u0440\u0430\u0442"
+  - text: Hello There
     speaker: {fileID: 11400000, guid: 2f39c75f94e423441b58314c5b877061, type: 2}
-  - text: "\u0417\u0434\u0430\u0440\u043E\u0432\u0430"
+  - text: Hi bro
     speaker: {fileID: 11400000, guid: b0f105fd6dc3f2d4e9b290420ad02a32, type: 2}
-  - text: "\u0422\u044B?"
+  - text: Its your Code?
     speaker: {fileID: 11400000, guid: 2f39c75f94e423441b58314c5b877061, type: 2}
-  - text: "\u042F"
+  - text: Yeap
     speaker: {fileID: 11400000, guid: b0f105fd6dc3f2d4e9b290420ad02a32, type: 2}
-  - text: "\u041E\u043A"
+  - text: Can i check it out?
     speaker: {fileID: 11400000, guid: 2f39c75f94e423441b58314c5b877061, type: 2}
-  - text: "\u0423\u0434\u0430\u0447\u0438"
+  - text: Yeah sure
     speaker: {fileID: 11400000, guid: b0f105fd6dc3f2d4e9b290420ad02a32, type: 2}
   backgroundImage: {fileID: 21300000, guid: 14c2d51a1897ece44a4866c4783228e3, type: 3}
   nextScene: {fileID: 11400000, guid: 0e210163fe20b51488d6d42129a72cca, type: 2}
   rightOptionScene: {fileID: 11400000, guid: 0e210163fe20b51488d6d42129a72cca, type: 2}
   leftOptionScene: {fileID: 0}
-  isChoiceAvailable: 1
+  isChoiceAvailable: 0
   isLeadingToMiniGame: 0
   isLastDialogue: 0

@@ -128,6 +128,11 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 6173856166565985883, guid: b1c13ddcbfd85924a9c2e8a01e83bf68, type: 3}
   m_PrefabInstance: {fileID: 2084449608}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &349005117 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8205691521843278516, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
+  m_PrefabInstance: {fileID: 4741662541474817749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &485609066
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +293,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1982217289 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1388966829360685060, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
+  m_PrefabInstance: {fileID: 4741662541474817749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2084449608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -413,22 +423,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 681566421777115526, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 681566421777115526, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 3651666f52a7d214aaaad3836df897c4, type: 2}
-    - target: {fileID: 681566421777115526, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -9118874846224927742, guid: 3651666f52a7d214aaaad3836df897c4, type: 2}
-    - target: {fileID: 681566421777115526, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1657908521227720831, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -513,26 +507,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 6618063290182915822, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
-      propertyPath: m_text
-      value: 
+    - target: {fileID: 2573349007326151301, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6618063290182915822, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
-      propertyPath: m_fontAsset
+    - target: {fileID: 8286135948839424423, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
+      propertyPath: currentScene
       value: 
-      objectReference: {fileID: 11400000, guid: 3651666f52a7d214aaaad3836df897c4, type: 2}
-    - target: {fileID: 6618063290182915822, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
-      propertyPath: m_sharedMaterial
+      objectReference: {fileID: 11400000, guid: 798ddaf3049e0d743ae6c0317fbaa3c2, type: 2}
+    - target: {fileID: 8286135948839424423, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
+      propertyPath: textAnimator
       value: 
-      objectReference: {fileID: -9118874846224927742, guid: 3651666f52a7d214aaaad3836df897c4, type: 2}
-    - target: {fileID: 6618063290182915822, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 349005117}
     - target: {fileID: 8286135948839424423, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
       propertyPath: miniGameCanvas
       value: 
       objectReference: {fileID: 51299046}
+    - target: {fileID: 8286135948839424423, guid: 63c2da546dea3a14db79ebb65e3e17b7, type: 3}
+      propertyPath: buttonAnimation
+      value: 
+      objectReference: {fileID: 1982217289}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
