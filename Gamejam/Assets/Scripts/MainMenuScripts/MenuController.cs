@@ -10,6 +10,8 @@ public class MenuEndScript : MonoBehaviour
     [SerializeField] private GameObject buttonExit;
     [SerializeField] private GameObject buttonSettings;
     [SerializeField] private GameObject buttonSettingsExit;
+    [SerializeField] private GameObject SoundSlider;
+    [SerializeField] private GameObject SettingsImage;
     private bool _isHidden = true;
     public void StartGame()
     {
@@ -21,6 +23,8 @@ public class MenuEndScript : MonoBehaviour
         buttonPlay.SetActive(_isHidden);
         buttonExit.SetActive(_isHidden);
         buttonSettings.SetActive(_isHidden);
+        SettingsImage.SetActive(!_isHidden);
+        SoundSlider.SetActive(!_isHidden);
         buttonSettingsExit.SetActive(!_isHidden);
     }
     public void Exit()
