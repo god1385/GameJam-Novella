@@ -30,5 +30,5 @@ MonoBehaviour:
   rightOptionScene: {fileID: 11400000, guid: 0e210163fe20b51488d6d42129a72cca, type: 2}
   leftOptionScene: {fileID: 0}
   isChoiceAvailable: 0
-  isLeadingToMiniGame: 1
+  isLeadingToMiniGame: 0
   isLastDialogue: 0
