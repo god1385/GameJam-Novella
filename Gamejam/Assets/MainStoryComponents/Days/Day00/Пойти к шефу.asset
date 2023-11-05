@@ -66,7 +66,7 @@ MonoBehaviour:
       \u0441\u0442\u0430\u0436\u0435\u0440\u201D!*\r\n"
     speaker: {fileID: 11400000, guid: 639c5f53e0cf99d40b9055977585ec98, type: 2}
   backgroundImage: {fileID: 21300000, guid: 413ad3c453dc5f542a1deac28dec00a0, type: 3}
-  nextScene: {fileID: 11400000, guid: 798ddaf3049e0d743ae6c0317fbaa3c2, type: 2}
+  nextScene: {fileID: 11400000, guid: fbd037c6f7bb33c4ab051e9275f24b77, type: 2}
   rightOptionScene: {fileID: 0}
   leftOptionScene: {fileID: 0}
   isChoiceAvailable: 0

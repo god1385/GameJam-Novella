@@ -54,7 +54,7 @@ MonoBehaviour:
       \u043F\u043E\u0434 \u043A\u0430\u043F\u044E\u0448\u043E\u043D\u043E\u043C!"
     speaker: {fileID: 11400000, guid: 2f39c75f94e423441b58314c5b877061, type: 2}
   backgroundImage: {fileID: 21300000, guid: 14c2d51a1897ece44a4866c4783228e3, type: 3}
-  nextScene: {fileID: 0}
+  nextScene: {fileID: 11400000, guid: bbc1fe3ccd9ddbb4786a602a8146be38, type: 2}
   rightOptionScene: {fileID: 0}
   leftOptionScene: {fileID: 0}
   isChoiceAvailable: 0

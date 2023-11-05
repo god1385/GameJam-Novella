@@ -29,7 +29,7 @@ MonoBehaviour:
       \u043A \u043C\u043E\u0435\u043C\u0443 \u0440\u0430\u0431\u043E\u0447\u0435\u043C\u0443
       \u043C\u0435\u0441\u0442\u0443."
     speaker: {fileID: 11400000, guid: 6ea660e22a256cb428dab7e737f7492b, type: 2}
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: 21300000, guid: 38af0ec165fb72d41b3bbbedcd332d39, type: 3}
   nextScene: {fileID: 11400000, guid: 94723a11f6c73b24590bc38742391ecb, type: 2}
   rightOptionScene: {fileID: 0}
   leftOptionScene: {fileID: 0}

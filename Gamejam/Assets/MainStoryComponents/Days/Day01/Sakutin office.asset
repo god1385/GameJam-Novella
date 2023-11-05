@@ -80,7 +80,7 @@ MonoBehaviour:
       \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438 \u043E\u0441\u0432\u043E\u0431\u043E\u0436\u0434\u0430\u0435\u0442
       \u0442\u0435\u0431\u044F \u043E\u0442 \u043D\u0435\u0435."
     speaker: {fileID: 11400000, guid: af4024458686a064e8e337ddbb3d3901, type: 2}
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: 21300000, guid: 413ad3c453dc5f542a1deac28dec00a0, type: 3}
   nextScene: {fileID: 11400000, guid: 400d3d80efd6dd7478a2d75c0b6075f6, type: 2}
   rightOptionScene: {fileID: 0}
   leftOptionScene: {fileID: 0}

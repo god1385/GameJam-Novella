@@ -21,7 +21,7 @@ MonoBehaviour:
       - \u043F\u0440\u0435\u043A\u0440\u0430\u0441\u043D\u043E\u0435 \u043D\u0430\u0447\u0430\u043B\u043E
       \u0434\u043D\u044F! *"
     speaker: {fileID: 11400000, guid: 639c5f53e0cf99d40b9055977585ec98, type: 2}
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: 21300000, guid: 8c3b47724739cf945b36679ed4ff0db2, type: 3}
   nextScene: {fileID: 11400000, guid: f751b060cbf9c5041ad512ecd40e0adf, type: 2}
   rightOptionScene: {fileID: 0}
   leftOptionScene: {fileID: 0}
