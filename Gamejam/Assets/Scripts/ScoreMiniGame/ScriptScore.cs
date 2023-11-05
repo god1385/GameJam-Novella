@@ -15,11 +15,13 @@ public class ScriptScore : MonoBehaviour
     {
         countScoreTabl++;
         score.text = "Счёт: " + Convert.ToString(countScoreTabl);
+        AudioManager.instance.PlaySfx("PointsGain");
     }
 
     public void DecreaseScore()
     {
         countScoreTabl--;
         score.text = "Счёт: " + Convert.ToString(countScoreTabl);
+        AudioManager.instance.PlaySfx("PointsLoss");
     }
 }

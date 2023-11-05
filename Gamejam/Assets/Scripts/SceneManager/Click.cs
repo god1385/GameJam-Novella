@@ -116,6 +116,7 @@ public class Click : MonoBehaviour
         ResetValues();
         miniGameCanvas.gameObject.SetActive(true);
         gameObject.SetActive(false);
+        AudioManager.instance.PlayMusic("MinigameTheme");
     }
 
     private void ResetValues()
