@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aecd00bb2440bd44bab7ff13d21ff4a, type: 3}
+  m_Name: Scene02
+  m_EditorClassIdentifier: 
+  dialogues:
+  - text: "*\u041D\u0430 \u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0435 \u0443\u0442\u0440\u043E*"
+    speaker: {fileID: 11400000, guid: 639c5f53e0cf99d40b9055977585ec98, type: 2}
+  - text: "*\u0417\u0430\u0445\u043E\u0434\u0438\u0442 \u0432 \u043E\u0444\u0438\u0441
+      \u0438 \u0432\u0438\u0434\u0438\u0442 \u043A\u0430\u043A \u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440
+      \u0441\u043E\u0431\u0438\u0440\u0430\u0435\u0442 \u0441\u0432\u043E\u0438 \u0432\u0435\u0449\u0438.*\r\n"
+    speaker: {fileID: 11400000, guid: 639c5f53e0cf99d40b9055977585ec98, type: 2}
+  - text: "*\u0420\u043E\u043C\u0430\u043D \u0441\u0442\u043E\u0438\u0442 \u0440\u044F\u0434\u043E\u043C 
+      \u0438 \u043E\u0441\u0443\u0436\u0434\u0430\u044E\u0449\u0435 \u0441\u043C\u043E\u0442\u0440\u0438\u0442
+      \u043D\u0430 \u044D\u0442\u043E.*"
+    speaker: {fileID: 11400000, guid: 639c5f53e0cf99d40b9055977585ec98, type: 2}
+  - text: " \u0410 \u0432\u043E\u0442 \u0438 \u043D\u0430\u0448 \u0433\u0435\u0440\u043E\u0439! "
+    speaker: {fileID: 11400000, guid: af4024458686a064e8e337ddbb3d3901, type: 2}
+  - text: " \u0410 \u0432\u043E\u0442 \u0438 \u043D\u0430\u0448 \u0433\u0435\u0440\u043E\u0439! "
+    speaker: {fileID: 11400000, guid: af4024458686a064e8e337ddbb3d3901, type: 2}
+  backgroundImage: {fileID: 0}
+  nextScene: {fileID: 0}
+  rightOptionScene: {fileID: 0}
+  leftOptionScene: {fileID: 0}
+  isChoiceAvailable: 0
+  isLeadingToMiniGame: 0
+  isLastDialogue: 0
+  rightChoiceText: 
+  leftChoiceText: 
