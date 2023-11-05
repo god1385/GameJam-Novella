@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86a760702948f1745a2300d175099249, type: 3}
-  m_Name: Narrator
+  m_Name: "\u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440"
   m_EditorClassIdentifier: 
-  speakerName: "\u0420\u0430\u0441\u0441\u043A\u0430\u0437\u0447\u0438\u043A"
-  speakerTextColor: {r: 0.8853675, g: 0.15886435, b: 0.9622642, a: 1}
-  speakerSprite: {fileID: 21300000, guid: 5552ac2c7dbad7445b08f7a72b6b703f, type: 3}
+  speakerName: "\u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440"
+  speakerTextColor: {r: 0, g: 0.9271069, b: 0.9622642, a: 0}
+  speakerSprite: {fileID: 21300000, guid: 5e1de8517d00e18478df994ee3e196ef, type: 3}
   mainCharacter: 0

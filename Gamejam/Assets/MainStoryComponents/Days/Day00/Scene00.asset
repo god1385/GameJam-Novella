@@ -14,17 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - text: "*\u0412\u0430\u0441\u0438\u043B\u0438\u0439 \u0432\u0445\u043E\u0434\u0438\u0442
-      \u0432 \u043E\u0444\u0438\u0441 \u0441\u0442\u0443\u0434\u0438\u0438 \u201CAvaga\u201D,\u0438
+      \u0432 \u043E\u0444\u0438\u0441 \u0441\u0442\u0443\u0434\u0438\u0438 \u201C\u0410\u0412\u0410\u0413\u0410\u201D,\u0438
       \u043D\u0435\u0440\u0432\u043D\u043E \u043E\u0433\u043B\u044F\u0434\u044B\u0432\u0430\u0435\u0442\u0441\u044F,\u0441\u043B\u0435\u0432\u0430
       \u0441\u043B\u044B\u0448\u0435\u043D \u0432\u043E\u0437\u043C\u0443\u0449\u0435\u043D\u043D\u044B\u0439
       \u0433\u043E\u043B\u043E\u0441\u2026*"
     speaker: {fileID: 11400000, guid: 639c5f53e0cf99d40b9055977585ec98, type: 2}
-  backgroundImage: {fileID: 21300000, guid: 14c2d51a1897ece44a4866c4783228e3, type: 3}
-  nextScene: {fileID: 11400000, guid: 0e210163fe20b51488d6d42129a72cca, type: 2}
-  rightOptionScene: {fileID: 11400000, guid: 0e210163fe20b51488d6d42129a72cca, type: 2}
-  leftOptionScene: {fileID: 0}
+  - text: "\u0427\u0442\u043E \u044D\u0442\u043E?"
+    speaker: {fileID: 11400000, guid: 2f39c75f94e423441b58314c5b877061, type: 2}
+  backgroundImage: {fileID: 21300000, guid: 38af0ec165fb72d41b3bbbedcd332d39, type: 3}
+  nextScene: {fileID: 0}
+  rightOptionScene: {fileID: 11400000, guid: 640c215d1c8518b48b0cf4decfdc1053, type: 2}
+  leftOptionScene: {fileID: 11400000, guid: 30c2d0fcfc1258043aef87bdca9d549a, type: 2}
   isChoiceAvailable: 1
   isLeadingToMiniGame: 0
   isLastDialogue: 0
-  rightChoiceText: 
-  leftChoiceText: 
+  rightChoiceText: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C
+    \u043D\u0430\u043F\u0440\u0430\u0432\u043E"
+  leftChoiceText: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043D\u0430\u043B\u0435\u0432\u043E"

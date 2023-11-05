@@ -33,6 +33,9 @@ public class Click : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !_isPlaying && dialogueIndex != currentScene.dialogues.Count)
         {
+            if (!currentScene.dialogues[dialogueIndex].speaker.mainCharacter)
+                speakerImage.sprite = currentScene.dialogues[dialogueIndex].speaker.speakerSprite;
+
             speakerNameTextField.text = currentScene.dialogues[dialogueIndex].speaker.speakerName;
             speakerNameTextField.color = currentScene.dialogues[dialogueIndex].speaker.speakerTextColor;
             StartCoroutine(TextPrinting(currentScene.dialogues[dialogueIndex++].text));
@@ -110,7 +113,7 @@ public class Click : MonoBehaviour
     private IEnumerator SwitchToButtons()
     {
         leftButtontextField.text = currentScene.leftChoiceText;
-        rightButtontextField.text = currentScene.leftChoiceText;
+        rightButtontextField.text = currentScene.rightChoiceText;
         yield return new WaitUntil(() => _isPlaying == false);
         yield return new WaitForSeconds(1f);
         HideBottomText();
