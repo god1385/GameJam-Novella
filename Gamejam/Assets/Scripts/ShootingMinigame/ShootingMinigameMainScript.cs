@@ -10,6 +10,7 @@ public class ShootingMinigameMainScript : MonoBehaviour
     [SerializeField] private int numberSpawn;
     [SerializeField] private int dropSpeed;
 
+    [System.Serializable]
     private struct SpawnedObject
     {
         public GameObject imageObject;
