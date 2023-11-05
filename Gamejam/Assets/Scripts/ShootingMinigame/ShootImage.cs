@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ShootImage : MonoBehaviour, IPointerClickHandler
+public class ShootImage : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private bool isBad;
     [SerializeField] private List<Sprite> imageListPNG;
@@ -22,8 +22,10 @@ public class ShootImage : MonoBehaviour, IPointerClickHandler
         _height = rt.rect.height;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
+        //AudioManager.instance.PlaySfx("ClickSound");
+
         gameObject.transform.parent.GetComponent<ShootingMinigameMainScript>().ClearImage(gameObject);
         Destroy(gameObject);
 

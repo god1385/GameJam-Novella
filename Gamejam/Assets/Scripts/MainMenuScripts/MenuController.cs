@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuEndScript : MonoBehaviour
 {
     [SerializeField] private GameObject buttonPlay;
+    [SerializeField] private Canvas mainCanvas;
     [SerializeField] private GameObject buttonExit;
     [SerializeField] private GameObject buttonSettings;
     [SerializeField] private GameObject buttonSettingsExit;
@@ -15,7 +16,9 @@ public class MenuEndScript : MonoBehaviour
     private bool _isHidden = true;
     public void StartGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        mainCanvas.gameObject.SetActive(true);
+        gameObject.SetActive(false);
+        AudioManager.instance.PlayMusic("StartDayTheme");
     }
     public void Settings()
     {
