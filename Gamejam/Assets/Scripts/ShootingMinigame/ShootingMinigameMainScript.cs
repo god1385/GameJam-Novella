@@ -28,6 +28,7 @@ public class ShootingMinigameMainScript : MonoBehaviour
     private float _canvasHeight;
     private bool _spawnGood;
     private Vector3 _canvasScale;
+    private Vector3[] _canvasCorners = new Vector3[4];
     private List<SpawnedObject> _removeObjects = new List<SpawnedObject>();
     private GameObject _spawnedObject;
 
@@ -38,6 +39,11 @@ public class ShootingMinigameMainScript : MonoBehaviour
         _canvasScale = gameObject.GetComponent<RectTransform>().localScale;
         _canvasWidth = gameObject.GetComponent<RectTransform>().rect.width * _canvasScale.x;
         _canvasHeight = gameObject.GetComponent<RectTransform>().rect.height * _canvasScale.y;
+        gameObject.GetComponent<RectTransform>().GetWorldCorners(_canvasCorners);
+
+        Debug.Log(_canvasCorners[0].x);
+        Debug.Log(_canvasCorners[3].x);
+        Debug.Log(_canvasWidth);
         _spawnY = _canvasHeight + _standartImageHeight * _canvasScale.y;
         _destroyY = -_standartImageHeight * _canvasScale.y;
 
@@ -65,26 +71,29 @@ public class ShootingMinigameMainScript : MonoBehaviour
                 float newImageWidth = _spawnedObject.GetComponent<ShootImage>().Width * _canvasScale.x;
                 float newImageHeight = _spawnedObject.GetComponent<ShootImage>().Height * _canvasScale.y;
 
+                //Debug.Log(newImageWidth);
+                //Debug.Log(_canvasWidth - newImageWidth);
+
                 Vector3[] newImageCorners = {
                     new Vector3(0, 0),
                     new Vector3(0, newImageHeight),
                     new Vector3(newImageWidth, newImageHeight),
                     new Vector3(newImageWidth, 0)
                 };
-                float newImageRandomX = 0, newImageRandomY = 0;
+                float newImageRandomX = 0;
                 bool foundPosition = false;
                 bool tryPlace = true;
                 int numberOfTry = 0;
 
                 while (foundPosition == false && tryPlace == true)
                 {
-                    newImageRandomX = Random.Range(newImageWidth, _canvasWidth - newImageWidth);
+                    newImageRandomX = Random.Range(newImageWidth / 2 + _canvasCorners[0].x, _canvasWidth - newImageWidth / 2 + _canvasCorners[0].x);
                     //newImageRandomY = Random.Range(_spawnY, canvasHeight - newImageHeight);
 
-                    newImageCorners[0] = new Vector3(newImageRandomX - newImageWidth / 2, newImageRandomY - newImageHeight / 2);
-                    newImageCorners[1] = new Vector3(newImageRandomX - newImageWidth / 2, newImageRandomY + newImageHeight / 2);
-                    newImageCorners[2] = new Vector3(newImageRandomX + newImageWidth / 2, newImageRandomY + newImageHeight / 2);
-                    newImageCorners[3] = new Vector3(newImageRandomX + newImageWidth / 2, newImageRandomY - newImageHeight / 2);
+                    newImageCorners[0] = new Vector3(newImageRandomX - newImageWidth / 2, _spawnY - newImageHeight / 2);
+                    newImageCorners[1] = new Vector3(newImageRandomX - newImageWidth / 2, _spawnY + newImageHeight / 2);
+                    newImageCorners[2] = new Vector3(newImageRandomX + newImageWidth / 2, _spawnY + newImageHeight / 2);
+                    newImageCorners[3] = new Vector3(newImageRandomX + newImageWidth / 2, _spawnY - newImageHeight / 2);
 
                     foundPosition = true;
                     foreach (var obj in _spawnedObjects)
@@ -132,6 +141,7 @@ public class ShootingMinigameMainScript : MonoBehaviour
     private void PutImage(GameObject image, float positionX, float positionY, float newImageWidth, float newImageHeight)
     {
         image.transform.position = new Vector3(positionX, positionY);
+        Debug.Log(positionX);
         image.GetComponent<Image>().enabled = true;
         SpawnedObject newStrucSpawn = new SpawnedObject();
         newStrucSpawn.imageObject = image;
