@@ -1,10 +1,13 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ShootImage : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private bool isBad;
+    [SerializeField] private List<Sprite> imageListPNG;
     private ScriptScore score;
     private float _width;
     private float _height;
@@ -37,5 +40,9 @@ public class ShootImage : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         score = GetComponentInParent<ScriptScore>();
+        if (isBad)
+        {
+            gameObject.GetComponent<Image>().sprite = imageListPNG[Random.Range(0, imageListPNG.Count)];
+        }
     }
 }
